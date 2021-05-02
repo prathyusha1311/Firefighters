@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Complain</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <form id="join" [formGroup]="sup" (ngSubmit)="supForm()"> -->
+
+    <ion-list>
+      <ion-item no-lines>
+        <ion-label>
+          <h2>Complain Against</h2>
+        </ion-label>
+        <ion-select name="comp"  [(ngModel)]="against">
+          <ion-select-option value="authority">authority</ion-select-option>
+          <ion-select-option value="individual">individual</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-item no-lines>
+      <ion-label>
+        <h2>Name</h2>
+      </ion-label>
+      <ion-input  [(ngModel)]="name" id="name" name="name" type="text"></ion-input>
+    </ion-item>
+    <ion-item no-lines *ngIf="">
+      <p>Name is required</p>
+    </ion-item>
+    <ion-item no-lines *ngIf="">
+      <p>Invalid Name</p>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label>
+        <h2>Title</h2>
+      </ion-label>
+      <ion-input  [(ngModel)]="title" id="title" name="title" type="text"></ion-input>
+    </ion-item>
+    <ion-item no-lines *ngIf="">
+      <p>Title is required</p>
+    </ion-item>
+    <ion-item no-lines *ngIf="">
+      <p>Invalid Title</p>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label>
+        <h2>Description</h2>
+      </ion-label>
+      <ion-textarea [(ngModel)]="desc" id="desc" name="desc" type="text"></ion-textarea>
+    </ion-item>
+    <ion-item no-lines *ngIf="">
+      <p>Description is required</p>
+    </ion-item>
+
+    <ion-button (click)="submit()">Submit Form</ion-button>
+      
+  <!-- </form> -->
+</ion-content>

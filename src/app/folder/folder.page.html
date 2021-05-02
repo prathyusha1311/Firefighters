@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title (click)="change()">FireFighter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <p *ngIf="isSafe"> Everything is safe right now. </p>
+
+  <div *ngIf="!isSafe" class="alert">
+    <ion-icon name="alert-circle-outline" size="large"></ion-icon>
+    {{ room }} is on fire
+  </div>
+
+  <div *ngIf="!isSafe" class="secure">
+    <ion-icon name="medkit-outline" Size="large"></ion-icon>
+    Help is on the Way
+  </div>
+
+  <ion-card *ngIf="!isSafe" (click)="inventory()">
+    <ion-card-header color="primary">
+      <ion-card-title>Try Extinguishing the Fire</ion-card-title>
+    </ion-card-header>
+    <img src="../../assets/inventory.svg" class="img"/>
+    <ion-card-content>
+      Clicking on this will move you to the inventory section where you can find things to extinguish the fire
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!isSafe" (click)="exit()">
+    <ion-card-header color="primary">
+      <ion-card-title>Move out of the building</ion-card-title>
+    </ion-card-header>
+    <img src="../../assets/exit.svg" class="img"/>
+    <ion-card-content>
+      If fire is spreading it is good idea to move out of the building. Follow the exit plan and find yourself nearest safe exit.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isSafe" (click)="precaution()">
+    <ion-card-header color="primary">
+      <ion-card-title>Read the Precautions</ion-card-title>
+    </ion-card-header>
+    <img src="../../assets/read.svg" class="img"/>
+    <ion-card-content>
+      Read a bunch of precautions which we want you to take to prevent getting this building on fire.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isSafe" (click)="complain()">
+    <ion-card-header color="primary">
+      <ion-card-title>Log a Complain</ion-card-title>
+    </ion-card-header>
+    <img src="../../assets/write.svg" class="img"/>
+    <ion-card-content>
+      If you see anyone violating any safety rules or if there is any negligence from the part of authorities log a formal complaint and let us look into the matter.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

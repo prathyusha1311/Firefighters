@@ -1,0 +1,7 @@
+{
+  "name": "fireSystem",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

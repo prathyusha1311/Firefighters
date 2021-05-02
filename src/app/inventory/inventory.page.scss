@@ -1,0 +1,23 @@
+ion-content{
+    --padding-end: 5%;
+    --padding-start: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+.picture{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    // padding: 0%;
+    vertical-align: middle;
+}
+ion-card{
+    margin-bottom: 20px;
+}
+.details{
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    padding-left: 5%;
+}
